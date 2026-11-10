@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Inferno Pizza</title>
+  <link rel="stylesheet" href="index.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="logo">🔥 INFERNO</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="menu.html" class="nav-cta">Order Now</a>
+  <button class="hamburger" id="hamburger">☰</button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80" alt="Restaurant" class="page-hero-img"/>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="section-tag">Get in Touch</span>
+    <h1>We'd Love to <em>Hear You</em></h1>
+    <p>Reservations, events, feedback — we're here.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-info reveal">
+    <h2>Come Find <em>Us</em></h2>
+    <div class="info-card">
+      <div class="info-icon">📍</div>
+      <div>
+        <h4>Address</h4>
+        <p>12, Fire Lane, Nungambakkam<br/>Chennai - 600 034, Tamil Nadu</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📞</div>
+      <div>
+        <h4>Phone</h4>
+        <p>+91 98765 43210</p>
+        <p>+91 44 2345 6789</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">✉️</div>
+      <div>
+        <h4>Email</h4>
+        <p>hello@infernopizza.in</p>
+        <p>events@infernopizza.in</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🕐</div>
+      <div>
+        <h4>Hours</h4>
+        <p>Mon-Thu: 11:00 AM - 10:00 PM</p>
+        <p>Fri-Sat: 11:00 AM - 11:00 PM</p>
+        <p>Sunday: 12:00 PM - 9:00 PM</p>
+      </div>
+    </div>
+    <div class="social-links">
+      <h4>Follow Us</h4>
+      <div class="social-btns">
+        <a href="#" class="social-btn">Instagram</a>
+        <a href="#" class="social-btn">Facebook</a>
+        <a href="#" class="social-btn">Twitter</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="contact-form-wrap reveal">
+    <h2>Send a <em>Message</em></h2>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Priya" required/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Sharma" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="priya@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" placeholder="+91 98765 43210"/>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <select>
+          <option>Table Reservation</option>
+          <option>Private Event</option>
+          <option>Feedback</option>
+          <option>General Enquiry</option>
+          <option>Franchise</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell us how we can help..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary submit-btn">Send Message 🔥</button>
+    </form>
+    <div class="form-success" id="formSuccess" style="display:none">
+      <div class="success-icon">🎉</div>
+      <h3>Message Sent!</h3>
+      <p>We'll get back to you within 24 hours. In the meantime, why not check out our menu?</p>
+      <a href="menu.html" class="btn-primary">See Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="map-section">
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9265843043!2d80.24141731482298!3d13.052500890793578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52664c4b7c2e7b%3A0x3b0c2e0f0d4f4c0!2sNungambakkam%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" title="Inferno Pizza Location">
+    </iframe>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">🔥 INFERNO</div>
+      <p>Fire-crafted pizzas made with love, tradition and the finest ingredients since 1987.</p>
+      <div class="socials">
+        <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter / X" title="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours Working </h4>
+      <ul>
+        <li>Mon-Thu: 11am - 10pm</li>
+        <li>Fri-Sat: 11am - 11pm</li>
+        <li>Sunday: 12pm - 9pm</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>📍 12, Fire Lane, Chennai</li>
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ hello@infernopizza.in</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy;2026 Inferno Pizza. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

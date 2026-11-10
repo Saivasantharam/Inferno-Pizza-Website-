@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inferno Pizza Ordering Website</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="logo">🔥 INFERNO</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="menu.html" class="nav-cta">Order Now</a>
+  <button class="hamburger" id="hamburger">☰</button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="menu.html" class="mobile-cta">Order Now</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1600&q=80" alt="Pizza background" class="hero-bg-img"/>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-label">Est. 1987 · Naples Tradition</span>
+    <h1 class="hero-title">
+      <span class="line1">CRAFTED IN</span>
+      <span class="line2">FIRE.</span>
+      <span class="line3">Served with Soul.</span>
+    </h1>
+    <p class="hero-sub">Wood-fired perfection. Fresh ingredients. Every single bite.</p>
+    <div class="hero-btns">
+      <a href="menu.html" class="btn-primary">🍕 Explore Menu</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="badges-strip">
+  <div class="badge"><span class="badge-num">12+</span><span class="badge-txt">Signature Pizzas</span></div>
+  <div class="badge-sep">✦</div>
+  <div class="badge"><span class="badge-num">900°</span><span class="badge-txt">Wood-Fire Oven</span></div>
+  <div class="badge-sep">✦</div>
+  <div class="badge"><span class="badge-num">30K+</span><span class="badge-txt">Happy Customers</span></div>
+  <div class="badge-sep">✦</div>
+  <div class="badge"><span class="badge-num">100%</span><span class="badge-txt">Fresh Daily</span></div>
+</div>
+
+<!-- BESTSELLER PIZZA CARDS with unique per-pizza images -->
+<section class="featured" id="featured">
+  <div class="section-header">
+    <span class="section-tag">Our Bestsellers</span>
+    <h2>The Crowd's <em>Favourites</em></h2>
+  </div>
+  <div class="pizza-cards">
+
+    <div class="pizza-card" data-tilt>
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80" alt="La Margherita"/>
+        <div class="card-fire">🔥</div>
+        <div class="card-badge">Bestseller</div>
+      </div>
+      <div class="card-body">
+        <h3>La Margherita</h3>
+        <p>San Marzano tomatoes, buffalo mozzarella, fresh basil & extra virgin olive oil.</p>
+        <div class="card-footer">
+          <span class="price">₹499</span>
+          <a href="menu.html" class="add-btn" onclick="addToCart('La Margherita',499);event.preventDefault();">Add +</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizza-card featured-card" data-tilt>
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Inferno Pepperoni"/>
+        <div class="card-fire">🔥</div>
+        <div class="card-badge hot">Hot Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Inferno Pepperoni</h3>
+        <p>Double pepperoni, jalapeños, smoked mozzarella, chilli-honey drizzle.</p>
+        <div class="card-footer">
+          <span class="price">₹649</span>
+          <a href="menu.html" class="add-btn" onclick="addToCart('Inferno Pepperoni',455);event.preventDefault();">Add +</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizza-card" data-tilt>
+      <div class="card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&q=80" alt="Garden Fire"/>
+        <div class="card-fire">🔥</div>
+        <div class="card-badge green">Veg Special</div>
+      </div>
+      <div class="card-body">
+        <h3>Garden Fire</h3>
+        <p>Grilled peppers, artichokes, sun-dried tomatoes, feta & herb pesto.</p>
+        <div class="card-footer">
+          <span class="price">₹549</span>
+          <a href="menu.html" class="add-btn" onclick="addToCart('Garden Fire',549);event.preventDefault();">Add +</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="see-all-wrap">
+    <a href="menu.html" class="btn-outline">See Full Menu →</a>
+  </div>
+</section>
+
+<!-- 3D PIZZA SPINNER SECTION -->
+<section class="pizza3d-section">
+  <div class="pizza3d-text">
+    <span class="section-tag">The Inferno Promise</span>
+    <h2>Every Pizza is a <em>Masterpiece</em></h2>
+    <ul class="promise-list">
+      <li><span class="icon">🌿</span> Hand-picked fresh ingredients daily</li>
+      <li><span class="icon">🍕</span> 48-hour slow-fermented dough</li>
+      <li><span class="icon">🔥</span> Authentic 900°F wood-fire oven</li>
+      <li><span class="icon">❤️</span> Crafted with love, every order</li>
+    </ul>
+    <a href="about.html" class="btn-primary">Our Story</a>
+  </div>
+  <div class="pizza3d-canvas-wrap">
+    <canvas id="pizza3dCanvas"></canvas>
+    <div class="glow-ring"></div>
+  </div>
+</section>
+
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="section-header">
+    <span class="section-tag">The Experience</span>
+    <h2>The Art of the <em>Inferno</em></h2>
+    <p>Captured in the heat of the moment.</p>
+  </div>
+  <div class="gallery-container">
+    <div class="gallery-item g-tall">
+      <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=800&q=80" alt="Pizza oven"/>
+      <div class="g-overlay"><span>Wood-Fired Mastery</span><a href="menu.html" class="g-link">View Menu</a></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=600&q=80" alt="Slice"/>
+      <div class="g-overlay"><span>Hand-Stretched</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1548369937-47519962c11a?w=600&q=80" alt="Toppings"/>
+      <div class="g-overlay"><span>Fresh Harvest</span></div>
+    </div>
+    <div class="gallery-item g-wide">
+      <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=900&q=80" alt="Wood fire"/>
+      <div class="g-overlay"><span>Smoked to Perfection</span><a href="menu.html" class="g-link">Taste It Now</a></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&q=80" alt="Cheese pull"/>
+      <div class="g-overlay"><span>The Perfect Pull</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header light">
+    <span class="section-tag">Reviews</span>
+    <h2>What Our <em>Guests</em> Say</h2>
+  </div>
+  <div class="testi-slider" id="testiSlider">
+    <div class="testi-card active">
+      <p>"Absolutely the best pizza I've had outside of Naples. The crust is perfectly charred and the ingredients sing. A must-visit!"</p>
+      <div class="testi-author">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya"/>
+        <div><strong>Priya Sharma</strong><span>Food Blogger</span></div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p>"We watched every IPL match at Inferno! Ordered from Inferno every Friday for a year. The pepperoni with chilli honey is life-changing. Always hot and fast."</p>
+      <div class="testi-author">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul"/>
+        <div><strong>Rahul Mehta</strong><span>Regular Customer</span></div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p>"The ambiance, the aroma, the taste — everything is 10/10. The wood-fire flavour is unmatched. Highly recommend the Truffle Mushroom!"</p>
+      <div class="testi-author">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anita"/>
+        <div><strong>Anita Krishnan</strong><span>Chef & Foodie</span></div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+  <div class="testi-dots" id="testiDots">
+    <span class="dot-btn active" data-i="0"></span>
+    <span class="dot-btn" data-i="1"></span>
+    <span class="dot-btn" data-i="2"></span>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-bg">
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80" alt="Restaurant interior"/>
+    <div class="cta-overlay"></div>
+  </div>
+  <div class="cta-content">
+    <h2>Ready to Experience <em>True</em> Pizza?</h2>
+    <p>Dine in, take away or get it delivered. Happiness guaranteed.</p>
+    <div class="cta-btns">
+      <a href="menu.html" class="btn-primary">Order Online</a>
+      <a href="contact.html" class="btn-ghost">Book a Table</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">🔥 INFERNO</div>
+      <p>Fire-crafted pizzas made with love, tradition and the finest ingredients since 1987.</p>
+      <div class="socials">
+        <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter / X" title="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours Working</h4>
+      <ul>
+        <li>Mon-Thu: 11am - 10pm</li>
+        <li>Fri-Sat: 11am - 11pm</li>
+        <li>Sunday: 12pm - 9pm</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li>📍 12, Fire Lane, Chennai</li>
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ hello@infernopizza.in</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy;2026 Inferno Pizza. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- CART --><!-- CART -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 Your Order</h3>
+    <button id="closeCart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty 🍕</p></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="checkout-btn" onclick="alert('🎉 Order placed! Confirmation SMS sent. 🔥')">Place Order →</button>
+  </div>
+</div>
+<button class="cart-fab" id="cartFab" style="display:none">🛒 <span id="cartCount">0</span></button>
+
+<script src="main.js"></script>
+</body>
+</html>
